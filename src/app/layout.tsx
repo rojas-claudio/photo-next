@@ -1,6 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import Header from "../components/header";
+//import Header from "../components/header";
 import Navigation from "../components/navigation";
 import Gallery from "../app/gallery/page";
 import { TagProvider } from "@/components/TagProvider";
