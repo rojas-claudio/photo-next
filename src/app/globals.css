@@ -5,6 +5,13 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  /* overflow: hidden; */
+}
+
+:root::-webkit-scrollbar {
+  display: none;
 }
 
 @media (prefers-color-scheme: dark) {
