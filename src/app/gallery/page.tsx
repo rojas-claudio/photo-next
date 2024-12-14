@@ -46,7 +46,7 @@ export default function Gallery() {
         <div className="sm:columns-1 md:columns-2 lg:columns-3 gap-5 px-10 pt-10">
             {photos.map(photo => (
                 <div key={photo.path}>
-                    <img className="mb-5" src={photo.path}/>
+                    <img className="mb-5" src={photo.path} alt=""/>
                 </div>
             ))}
         </div>
