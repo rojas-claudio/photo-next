@@ -10,7 +10,8 @@ import { IBM_Plex_Sans } from "next/font/google";
 
 const ibm = IBM_Plex_Sans({
   weight: "400",
-  style: "normal"
+  style: "normal",
+  subsets: ["latin"]
 })
 
 export const metadata: Metadata = {

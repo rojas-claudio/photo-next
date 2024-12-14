@@ -6,11 +6,10 @@ type TagContextType = {
     setTag: (newTag: string) => void;
 }
 
-const defaultTag = "DefaultTag"
 const TagContext = createContext<TagContextType | undefined>(undefined);
 
 export const TagProvider = ({children}: {children: React.ReactNode}) => {
-    const [tag, setTag] = useState("DefaultTag");
+    const [tag, setTag] = useState("DeathValley");
 
     return (
         <TagContext.Provider value={{ tag, setTag }}>
