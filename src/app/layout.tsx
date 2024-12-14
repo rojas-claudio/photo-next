@@ -27,18 +27,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <TagProvider>
-        <body className={`${ibm.className} flex h-screen antialiased`}>
+        <body className={`${ibm.className} flex flex-col lg:flex-row h-screen antialiased`}>
 
-          <div className="h-full w-1/6 fixed">
+          <div className="w-full lg:h-full lg:w-1/6 lg:fixed">
             <Navigation />
           </div>
 
-
-          <div className="w-5/6 ml-auto">
-            <div className="w-full flex justify-end pt-4">
+          <div className="w-full lg:w-5/6 lg:ml-auto">
+            {/* <div className="w-full flex justify-end pt-4">
               <Header />
-            </div>
-
+            </div> */}
             <div>
               <Gallery/>
             </div>
