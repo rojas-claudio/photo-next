@@ -30,6 +30,8 @@ export default function Navigation() {
                     </div>
                 </div>
                 <div className="pt-8 pb-4">
+                    <a target="_blank" href="https://rojas.darkroom.com">prints</a>
+                    <br></br>
                     <a target="_blank" href="https://instagram.com/rojas.photo">instagram</a>
                 </div>
             </div>
