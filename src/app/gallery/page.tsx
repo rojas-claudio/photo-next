@@ -3,6 +3,7 @@
 import { useTag } from "@/components/TagProvider"
 import { useEffect, useState } from "react"
 import metadata from "../../../public/photos/photos.json"
+import Footer from "@/components/footer"
 
 export default function Gallery() {
     const [photos, loadPhotos] = useState([])
@@ -42,7 +43,7 @@ export default function Gallery() {
     }
 
     return (
-        
+        <>
         <div className="sm:columns-1 md:columns-2 lg:columns-3 gap-5 px-10 pt-10">
             {photos.map(photo => (
                 <div key={photo.path}>
@@ -50,6 +51,9 @@ export default function Gallery() {
                 </div>
             ))}
         </div>
+        <Footer/>
+        </>
+
     
     )
 }
