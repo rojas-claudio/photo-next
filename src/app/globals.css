@@ -15,13 +15,13 @@
   display: none;
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
     --loupe-background: rgb(9 9 11);
   }
-} */
+}
 
 body {
   color: var(--foreground);
