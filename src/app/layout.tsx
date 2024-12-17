@@ -34,9 +34,6 @@ export default function RootLayout({
           </div>
 
           <div className="w-full lg:w-5/6 lg:ml-auto">
-            {/* <div className="w-full flex justify-end pt-4">
-              <Header />
-            </div> */}
             <div>
               <Gallery/>
             </div>

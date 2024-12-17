@@ -2,19 +2,24 @@
 
 import { useTag } from "@/components/TagProvider"
 import { useEffect, useState } from "react"
+
 import metadata from "../../../public/photos/photos.json"
+
 import Footer from "@/components/footer"
+import Loupe from "@/app/gallery/loupe"
 
 export default function Gallery() {
-    const [photos, loadPhotos] = useState([])
+    const [photos, loadPhotos] = useState([])    
     const [isLoading, setIsLoading] = useState(true)
-    const { tag = "DefaultTag" } = useTag()
+    const [loupeIndex, setLoupeIndex] = useState<number | null>(null)
+
+    const { tag } = useTag()
 
     useEffect(() => {
         async function preloadImages(tag: string | null) {
             setIsLoading(true)
             const filteredPhotos = metadata.photos.filter(photo => (tag ? photo.tag === tag : true))
-            
+
             await Promise.all(
                 filteredPhotos.map(photo => {
                     return new Promise<void>((resolve) => {
@@ -44,17 +49,25 @@ export default function Gallery() {
 
     return (
         <>
-        <div className="sm:columns-1 md:columns-2 lg:columns-3 gap-5 px-10 pt-10">
-            {photos.map(photo => (
-                <div key={photo.path}>
-                    <img className="mb-5" src={photo.path} alt=""/>
-                </div>
-            ))}
-        </div>
-        <Footer/>
-        </>
+            <div className="sm:columns-1 md:columns-2 lg:columns-3 gap-5 px-10 pt-10">
+                {
+                    photos.map((photo, index) => (
+                        <div key={photo.path}>
+                            <img className="mb-5" src={photo.path} alt="" onClick={ () => setLoupeIndex(index) }/>
+                        </div>
+                    ))
+                }
+            </div>
 
-    
+            { loupeIndex !== null && (
+                <Loupe
+                    photos={photos} //pass all photos, will make Loupe scrollable in the future
+                    index={loupeIndex}
+                    onClose={() => setLoupeIndex(null)}/>
+            )}
+
+            <Footer/>
+        </>
     )
 }
 
