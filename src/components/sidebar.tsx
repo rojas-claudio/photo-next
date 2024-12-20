@@ -2,6 +2,7 @@
 
 import { useTag } from '@/components/TagProvider'
 import { usePathname } from "next/navigation"
+import Link from "next/link"
 
 export default function Sidebar() {
     const { tag, setTag } = useTag()
@@ -21,7 +22,7 @@ export default function Sidebar() {
             <div className="flex flex-col lg:h-screen px-10 pt-10 lg:pl-4 lg:pt-4">
                 <div>
                     <h1 className="pb-8" >
-                        <a href="/">claudio rojas</a>
+                        <Link href="/">claudio rojas</Link>
                     </h1>
                 </div>
                 <div className="grow-0 lg:flex-grow">
