@@ -6,7 +6,7 @@ import { useEffect, useState } from "react"
 import metadata from "../../../public/photos/photos.json"
 
 import Footer from "@/components/footer"
-import Loupe from "@/app/gallery/loupe"
+import Loupe from "@/components/gallery/loupe"
 
 export default function Gallery() {
     const [photos, loadPhotos] = useState([])    
@@ -53,7 +53,7 @@ export default function Gallery() {
                 {
                     photos.map((photo, index) => (
                         <div key={photo.path}>
-                            <img className="mb-5" src={photo.path} alt="" onClick={ () => setLoupeIndex(index) }/>
+                            <img className="mb-5 cursor-pointer" src={photo.path} alt="" onClick={ () => setLoupeIndex(index) }/>
                         </div>
                     ))
                 }

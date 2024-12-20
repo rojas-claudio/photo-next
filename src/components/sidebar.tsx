@@ -1,9 +1,11 @@
 'use client'
 
 import { useTag } from '@/components/TagProvider'
+import { usePathname } from "next/navigation"
 
-export default function Navigation() {
+export default function Sidebar() {
     const { tag, setTag } = useTag()
+
 
     const buttons = [
         { label: "DEATH VALLEY", value: "DeathValley" },
@@ -12,14 +14,19 @@ export default function Navigation() {
         { label: "CANADA", value: "Canada" },
     ]
 
+    const pathname = usePathname()
+
     return (
         <>
             <div className="flex flex-col lg:h-screen px-10 pt-10 lg:pl-4 lg:pt-4">
                 <div>
-                    <h1 className="pb-8">claudio rojas</h1>
+                    <h1 className="pb-8" >
+                        <a href="/">claudio rojas</a>
+                    </h1>
                 </div>
                 <div className="grow-0 lg:flex-grow">
-                    <div>
+                    { pathname === "/" && (
+                        <div>
                         {buttons.map(({ label, value }) => (
                             <div key={value}> 
                                 <button onClick={() => setTag(value)}>
@@ -27,9 +34,12 @@ export default function Navigation() {
                                 </button>
                             </div>
                         ))}
-                    </div>
+                        </div>
+                    )}
                 </div>
                 <div className="pt-8 pb-4">
+                    <a href="/about">about</a>
+                    <br></br>
                     <a target="_blank" href="https://rojas.darkroom.com">prints</a>
                     <br></br>
                     <a target="_blank" href="https://instagram.com/rojas.photo">instagram</a>
